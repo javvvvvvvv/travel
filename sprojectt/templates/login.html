@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    <style>
+        input[type=text],[type=password],[type=submit]{
+        text-align:center;border:30px;padding:12px 20px;box-sizing:border-box;
+        background-color:white;margin:8px;margin:20px}
+        h1{
+        text-align:center;color:white;}
+        body{background-color:grey;}
+
+    </style>
+
+</head>
+<body>
+<h1 >login</h1>
+<!--style="background-color:grey;"-->
+<!--style="text-align:center;color:white;"-->
+<div style="text-align:center;">
+<form action="login" method="post">
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="enter the username"><br>
+    <input type="password" name="password" placeholder="enter your password"><br>
+    <input type="submit">
+
+
+</form>
+</div>
+{% for i in messages%}
+{{ i }}
+{% endfor %}
+</body>
+</html>
